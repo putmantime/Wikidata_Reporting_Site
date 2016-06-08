@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>WD MicrobeBot Counts</title>
+
+</head>
+
+<body>
+<h1>Microbial Species in Wikidata</h1>
+<table>
+    <tr>
+        <th>WD Organism Item</th>
+        <th>NCBI Taxid</th>
+        <th>Gene Counts</th>
+        <th>Protein Counts</th>
+    </tr>
+    {% for item in mc %}
+    <tr>
+        <td><a href={{ item.wd_species_x}}>{{item.label_x}} </a> </td>
+        <td>{{ item.pk }}</td>
+        <td>{{ item.gene_count }}</td>
+        <td>{{ item.protein_count}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>*updated daily via <a href="http://www.wikidatad.org">Wikidata Query Service (WDQS)</a></p>
+</body>
+</html>
+
